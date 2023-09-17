@@ -1,0 +1,192 @@
+@import url(../App.css);
+
+.numbered-titled-crew {
+  width: 60vw;
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+  letter-spacing: 4.72px;
+}
+
+.numbered-titled-crew span {
+  margin-right: 0.5em;
+  font-weight: 700;
+  color: hsl(var(--clr-white) / 0.25);
+}
+
+.body {
+  background-size: cover;
+  background-position: bottom center;
+}
+
+/* Dot Indicators */
+
+.dot-indicators>* {
+  cursor: pointer;
+  border: 0;
+  border-radius: 50%;
+  padding: 0.5em;
+  background-color: hsl(var(--clr-white) / 0.25);
+  transition: 0.1s ease-in-out;
+}
+
+.dot-indicators>*:hover,
+.dot-indicators>*:focus {
+  background-color: hsl(var(--clr-white) / 0.5);
+}
+
+.dot-indicators>[aria-selected='true'] {
+  background-color: hsl(var(--clr-white) / 1);
+}
+
+
+
+
+/* crew */
+
+.body {
+  background-image: url(https://i.imgur.com/Uu7Ubdo.jpg);
+  background-attachment: fixed;
+  object-fit: cover;
+  text-align: center;
+}
+
+/* crew page layout */
+
+.grid-container--crew {
+  --flow-space: 2rem;
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.grid-container--crew>picture {
+  grid-area: image;
+  max-width: 60%;
+  border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+}
+
+.grid-container--crew>.dot-indicators {
+  grid-area: tabs;
+}
+
+.grid-container--crew>.crew-details {
+  grid-area: content;
+}
+
+.crew-details h2 {
+  color: hsl(var(--clr-white) / 0.5);
+}
+
+
+/* media queries : medium screens */
+
+@media (max-width: 35em) {
+
+  .grid-container--crew {
+    padding-bottom: 0;
+    grid-template-areas:
+      'title'
+      'content'
+      'tabs'
+      'image';
+  }
+
+  .body {
+    background-image: url(https://i.imgur.com/EJvyS8X.jpg);
+    background-attachment: fixed;
+    object-fit: cover;
+  }
+
+  .crew--img {
+    margin-bottom: 20%;
+  }
+
+  .mem--con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #mem--bio {
+    max-width: 90%;
+  }
+
+  .numbered-titled-crew {
+    margin-top: 6rem;
+  }
+}
+
+/* media queries : large screens */
+
+@media (min-width: 45em) {
+  .grid-container {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem,
+        1fr);
+    padding: 10%;
+  }
+
+  .grid-container--crew {
+    grid-template-columns: minmax(1rem, 1fr) minmax(0, 37rem) minmax(0, 23rem) minmax(1rem,
+        1fr);
+    justify-items: start;
+    grid-template-areas:
+      '. title title .'
+      '. content image .'
+      '. tabs image .';
+  }
+
+  .grid-container--crew>picture {
+    grid-column: span;
+    align-self: end;
+    max-width: 90%;
+  }
+
+  .numbered-titled-crew {
+    margin-top: 4rem;
+  }
+}
+
+
+@media only screen and (min-width: 35em) and (max-width: 45em) {
+  .body {
+    background-image: url(https://i.imgur.com/LCGK0bl.jpg);
+    background-attachment: fixed;
+    object-fit: cover;
+    margin-top: -10%;
+  }
+
+  .mem--con {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  #mem--bio {
+    max-width: 90%;
+    text-align: center;
+  }
+
+
+  .crew--img {
+    margin-bottom: 20%;
+  }
+
+  .numbered-titled-crew {
+    margin-top: 9rem;
+  }
+}
+
+
+.material-symbols-outlined {
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}

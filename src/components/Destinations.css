@@ -1,0 +1,360 @@
+@import url(../App.css);
+
+
+/* ------------------------------------------------------ */
+/* Layout                                                 */
+/* ------------------------------------------------------ */
+
+.grid-container {
+  display: grid;
+}
+
+.grid-container p:not([class]) {
+  max-width: 50ch;
+}
+
+.numbered-titled-dest {
+  grid-area: title;
+}
+
+.numbered-titled-dest {
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-500);
+  text-transform: uppercase;
+  letter-spacing: 4.72px;
+}
+
+.numbered-titled-dest span {
+  margin-right: 0.5em;
+  font-weight: 700;
+  color: hsl(var(--clr-white) / 0.25);
+}
+
+.underline-indicators-planet>* {
+  cursor: pointer;
+  padding: var(--underline-gap, 0.5rem) 0;
+  border: 0;
+  border-bottom: 0.2rem solid hsl(var(--clr-white) / 0);
+  background-color: transparent;
+}
+
+.underline-indicators-planet>*:hover,
+.underline-indicators-planet>*:focus {
+  border-color: rgb(247, 210, 151, 0.5);
+}
+
+.underline-indicators-planet>.active,
+.underline-indicators-planet>[aria-selected='true'] {
+  color: hsl(var(--clr-white) / 1);
+  border-color: rgb(247, 210, 151,1);
+}
+
+
+/* destination page layout */
+
+.grid-container--destination {
+  --flow-space: 2rem;
+  grid-template-areas:
+    'title'
+    'image'
+    'tabs'
+    'content';
+}
+
+.grid-container--destination>picture {
+  grid-area: image;
+  max-width: 100%;
+  align-self: center;
+}
+
+.grid-container--destination>.tab-list {
+  grid-area: tabs;
+}
+
+.grid-container--destination>.destination-info {
+  grid-area: content;
+}
+
+.destination-meta {
+  flex-direction: column;
+  border-top: 1px solid hsl(var(--clr-white) / 0.1);
+  padding-top: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.destination-meta p {
+  font-size: 1.75rem;
+}
+
+/* media queries : medium screens */
+
+@media (max-width: 35em) {
+
+  .num--t {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-top: 7rem;
+  }
+
+  .destination-meta {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  .destination {
+    background-image: url(https://i.imgur.com/uYyOVB3.jpg);
+    background-attachment: fixed;
+    object-fit: cover;
+    text-align: center;
+  }
+
+  .planet--img {
+    width: 300px;
+  }
+
+  .desc {
+    max-width: 85%;
+  }
+
+  .cards--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    margin-bottom: -10%;
+    margin-top: 10%;
+  }
+
+  .news-card {
+    max-height: 100px;
+    margin-bottom: 10%;
+  }
+
+  .news--desc {
+    visibility: collapse;
+  }
+
+}
+
+@media only screen and (min-width: 35em) and (max-width: 45em) {
+  .destination {
+    background-image: url(https://i.imgur.com/uYyOVB3.jpg);
+    background-attachment: fixed;
+  }
+
+  .num--t {
+    display: flex;
+    align-items: center;
+    justify-self: center;
+    margin-top: 10rem;
+  }
+
+  .grid-container--destination>picture {
+    grid-area: image;
+    border-bottom: 1px solid hsl(var(--clr-white) / 0.1);
+  }
+
+  .desc {
+    max-width: 85%;
+  }
+
+  .tab-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2%;
+  }
+
+  .grid-container {
+    text-align: center;
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-top: 10%;
+    min-height: 92vh;
+  }
+
+}
+
+
+/* media queries : large screens */
+
+@media (min-width: 45em) {
+  .grid-container {
+    text-align: left;
+    column-gap: var(--container-gap, 2rem);
+    grid-template-columns: minmax(1rem, 1fr) repeat(2, minmax(0, 30rem)) minmax(1rem,
+        1fr);
+    padding: 10%;
+  }
+
+  .grid-container--destination {
+    justify-items: start;
+    align-content: start;
+    grid-template-areas:
+      '. title title .'
+      '. image tabs .'
+      '. image content .';
+  }
+
+  .grid-container--destination>picture {
+    max-width: 90%;
+  }
+
+  .destination-meta {
+    display: flex;
+    flex-direction: row;
+    --gap: min(6vw, 6rem);
+    /* justify-content: start; */
+  }
+
+  .destination {
+    background-image: url(https://i.imgur.com/GoLGbOx.jpg);
+    background-attachment: fixed;
+    padding-top: 3%;
+
+  }
+
+  .news-card {
+    position: relative;
+    border: 1px solid white;
+    background-color: black;
+    max-width: 20%;
+    padding: 1%;
+  }
+
+  .cus-vd {
+    margin-top: 2%;
+    margin-bottom: -2%;
+  }
+
+
+}
+
+
+
+/* Keyframes for text slide-up animation */
+@keyframes slideUp {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the text-slide-up class */
+.text-slide-up {
+  animation: slideUp 0.5s ease-in-out;
+  animation-delay: 0.2s;
+  animation-fill-mode: both;
+}
+
+/* Keyframes for slide-left animation */
+@keyframes slideLeft {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Apply the animation to the slide-left class */
+.slide-left {
+  animation: slideLeft 0.5s ease-in-out;
+  animation-delay: 0.1s;
+  animation-fill-mode: both;
+}
+
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* CSS for slide-left animation */
+.slide-lef {
+  transform: translateX(-100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+#youtube .container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.down--arrow-c {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-symbols-outlined {
+  position: fixed;
+  bottom: 0;
+  color: hsl(var(--clr-light));
+  font-size: 50px;
+  font-weight: 100;
+  color: rgb(155, 212, 224);
+  opacity: 80%;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24
+}
+
+content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cards--container {
+  display: flex;
+  justify-content: space-evenly;
+  padding-top: 3%;
+}
+
+.card--title {
+  color: rgb(247, 210, 151);
+}
+
+.news-card {
+  position: relative;
+  border: 1px solid white;
+  background-color: rgba(201, 201, 201, 0.1);
+  color: #fff;
+  padding: 1%;
+  border-radius: 10px;
+}
+
+.cards--container p {
+  margin-top: 10px;
+}
+
+.read-more {
+  position: absolute;
+  right: 5px;
+  bottom: 0;
+  color: rgb(125, 176, 201);
+}
+
+hr {
+  max-width: 80%;
+  opacity: 50%;
+  border: 0.1px solid gray;
+}
