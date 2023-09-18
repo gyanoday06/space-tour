@@ -15,7 +15,7 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route exact path="/space-tour" element={<Home />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/crew" element={<Crew />} />
             <Route path="/technology" element={<Technology />} />
