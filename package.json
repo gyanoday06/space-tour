@@ -1,7 +1,7 @@
 {
   "name": "space-tour",
   "version": "0.1.0",
-  "private": true,
+  "private": false,
   "homepage": "https://gyanoday06.github.io/space-tour",
 
   "dependencies": {
