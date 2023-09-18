@@ -6,7 +6,7 @@ import Destinations from './components/destinations';
 import Crew from './components/crew';
 import Technology from './components/technology';
 
-import './App.css'
+import './App.css';
 
 function App() {
   return (
@@ -15,10 +15,10 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/destinations" element={<Destinations />} />
-            <Route path="/crew" element={<Crew />} />
-            <Route path="/technology" element={<Technology />} />
+            <Route path="/space-tour" element={<Home />} />
+            <Route path="/space-tour/destinations" element={<Destinations />} />
+            <Route path="/space-tour/crew" element={<Crew />} />
+            <Route path="/space-tour/technology" element={<Technology />} />
           </Routes>
         </div>
       </div>
