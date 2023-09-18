@@ -6,7 +6,6 @@ This is a solution to the [Space tourism website challenge on Frontend Mentor](h
 
 - [Overview](#overview)
   - [The challenge](#the-challenge)
-  - [Status](#status)
   - [Screenshots](#screenshots)
   - [Links](#links)
 - [My process](#my-process)
