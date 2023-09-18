@@ -32,7 +32,7 @@ export default function Destinations() {
   useEffect(() => {
     const fetchNews = async () => {
       try {
-        const apiKey = process.env.REACT_APP_API_KEY;
+        const apiKey = '7c11737d9d634d6a9a799f789529d4fc';
         const query = selectedDestination.name;
         const response = await fetch(`https://newsapi.org/v2/everything?q=${query}&apiKey=${apiKey}`);
         if (response.ok) {
