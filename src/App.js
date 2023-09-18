@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes, Link, useNavigate } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'; // Import 'Navigate' from react-router-dom
 import Header from './components/header';
 import Home from './components/home';
 import Destinations from './components/destinations';
@@ -9,11 +9,9 @@ import Technology from './components/technology';
 import './App.css';
 
 function App() {
-  const navigate = useNavigate();
-
   useEffect(() => {
-    navigate('/');
-  }, [navigate]);
+    window.location.pathname === '/' || Navigate('/');
+  }, []);
 
   return (
     <Router>
@@ -21,7 +19,7 @@ function App() {
         <Header />
         <div className="content">
           <Routes>
-            <Route exact path="/" element={<Home />} />
+            <Route path="/" element={<Home />} />
             <Route path="/destinations" element={<Destinations />} />
             <Route path="/crew" element={<Crew />} />
             <Route path="/technology" element={<Technology />} />
