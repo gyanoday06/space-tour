@@ -24,10 +24,6 @@ Users should be able to:
 - See hover states for all interactive elements on the page
 - View each page and be able to toggle between the tabs to see new information
 
-### Status
-
-Done!
-
 ### Screenshots
 
 #### Home
@@ -51,6 +47,7 @@ Done!
 ### Built with
 - React
 - React-router
+- NewsAPI
 - Semantic HTML5 markup
 - CSS custom properties
 - Flexbox
@@ -58,7 +55,7 @@ Done!
 
 ### What I learned
 
-
+Using api calls and rendering components using React Router method
 
 ## Author
 - LinkedIn - [@gyanoday06](https://www.linkedin.com/in/gyanoday06)
