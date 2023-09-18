@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.c8812171.css",
-    "main.js": "/static/js/main.37b57194.js",
-    "index.html": "/index.html",
-    "main.c8812171.css.map": "/static/css/main.c8812171.css.map",
-    "main.37b57194.js.map": "/static/js/main.37b57194.js.map"
+    "main.css": "/space-tour/static/css/main.c8812171.css",
+    "main.js": "/space-tour/static/js/main.37b57194.js",
+    "index.html": "/space-tour/index.html",
+    "main.c8812171.css.map": "/space-tour/static/css/main.c8812171.css.map",
+    "main.37b57194.js.map": "/space-tour/static/js/main.37b57194.js.map"
   },
   "entrypoints": [
     "static/css/main.c8812171.css",
